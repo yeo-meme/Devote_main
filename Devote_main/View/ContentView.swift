@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
     
     // MARK: - PROPERTY
-    
+    @State var task : String = ""
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -41,16 +41,42 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+            
+            VStack{
+                VStack(spacing: 16){
+                    TextField("New Task", text: $task)
+                        .padding()
+                        .background(
+                            Color(UIColor.systemGray6)
+                        )
+                        .cornerRadius(10)
+                    Button(action: {
+                        addItem()
+                    }, label:{ Spacer()
+                        Text("SAVE")
+                        Spacer()
+                    })
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .background(Color.pink)
+                    .cornerRadius(10)
+                }//: vstack
+                .padding()
+                
+                
+                List {
+                    ForEach(items) { item in
+                        NavigationLink {
+                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        } label: {
+                            Text(item.timestamp!, formatter: itemFormatter)
+                        }
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
+                    .onDelete(perform: deleteItems)
+                }//: List
+            }//: Vsstack
+            .navigationBarTitle("Daily Tasks", displayMode: .large )
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -60,9 +86,9 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
-            }
+            } //: Toolbar
             Text("Select an item")
-        }
+        }//: navigation
     }
 
   
