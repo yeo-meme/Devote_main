@@ -17,6 +17,7 @@
 		3E386E9F2939928600133DA5 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3E386E9C2939928600133DA5 /* sound-rise.mp3 */; };
 		3E386EA5293999B800133DA5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E386E8A2939919500133DA5 /* Persistence.swift */; };
 		3E90AD0329399BFB00E5FFEE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90AD0229399BFB00E5FFEE /* Constant.swift */; };
+		3E90AD05293C62CF00E5FFEE /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90AD04293C62CF00E5FFEE /* HideKeyboardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3E386E9C2939928600133DA5 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		3E386EA02939929C00133DA5 /* Devote-main-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Devote-main-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3E90AD0229399BFB00E5FFEE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3E90AD04293C62CF00E5FFEE /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		3E386E972939925A00133DA5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3E90AD04293C62CF00E5FFEE /* HideKeyboardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				3E386E842939919400133DA5 /* ContentView.swift in Sources */,
 				3E386EA5293999B800133DA5 /* Persistence.swift in Sources */,
+				3E90AD05293C62CF00E5FFEE /* HideKeyboardExtension.swift in Sources */,
 				3E90AD0329399BFB00E5FFEE /* Constant.swift in Sources */,
 				3E386E822939919400133DA5 /* Devote_mainApp.swift in Sources */,
 				3E386E8E2939919500133DA5 /* Devote_main.xcdatamodeld in Sources */,

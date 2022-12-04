@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4705A7F8-BDF8-4D6A-AA00-D7668F5AADF7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Devote_main/View/ContentView.swift"
@@ -47,7 +47,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
                   endingLineNumber = "30"
-                  offsetFromSymbolStart = "292">
+                  offsetFromSymbolStart = "300">
                </Location>
             </Locations>
          </BreakpointContent>
