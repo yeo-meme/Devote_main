@@ -51,69 +51,67 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             
-            VStack{
-                VStack(spacing: 16){
-                    TextField("New Task", text: $task)
+            ZStack {
+                VStack{
+                    VStack(spacing: 16){
+                        TextField("New Task", text: $task)
+                            .padding()
+                            .background(
+                                Color(UIColor.systemGray6)
+                            )
+                            .cornerRadius(10)
+                        
+                        Button(action: {
+                            addItem()
+                        }, label:{ Spacer()
+                            Text("SAVE")
+                            Spacer()
+                        })
+                        .disabled(isButtonDisabled)
                         .padding()
-                        .background(
-                            Color(UIColor.systemGray6)
-                        )
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .background(isButtonDisabled ? Color.gray : Color.pink)
                         .cornerRadius(10)
-                    
-                    Button(action: {
-                        addItem()
-                    }, label:{ Spacer()
-                        Text("SAVE")
-                        Spacer()
-                    })
-                    .disabled(isButtonDisabled)
+                    }//: vstack
                     .padding()
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .background(isButtonDisabled ? Color.gray : Color.pink)
-                    .cornerRadius(10)
-                }//: vstack
-                .padding()
-                
-                
-                VStack {
-                    List {
-                        ForEach(items) { item in
-//                            NavigationLink {
-                                VStack(alignment: .leading) {
-                                    Text(item.task ?? "")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                        .font(.footnote)
-                                        .foregroundColor(.gray)
-//                                }//: navigationlink
-//                            } label: {
-//                                Text(item.timestamp!, formatter: itemFormatter)
+                    
+                    
+                    VStack {
+                        List {
+                            ForEach(items) { item in
+                                NavigationLink {
+                                    VStack(alignment: .leading) {
+                                        Text(item.task ?? "")
+                                            .font(.headline)
+                                            .fontWeight(.bold)
+                                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                            .font(.footnote)
+                                            .foregroundColor(.gray)
+                                    }// : LIST ITEM
+                                } label: {
+                                    Text(item.timestamp!, formatter: itemFormatter)
+                                }
                             }
-                        }
-                        .onDelete(perform: deleteItems)
-                    }//: ListItem
-                }//: Vsstack
-                
+                            .onDelete(perform: deleteItems)
+                        }//: List
+                    }//: Vsstack
+                }//: zstack
                 .navigationBarTitle("Daily Tasks", displayMode: .large )
                 .toolbar {
-#if os(iOS)
+                    #if os(iOS)
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
                     }
-#endif
-                    //                ToolbarItem (placement: .navigationBarTrailing) {
-                    //                    Button(action: addItem) {
-                    //                        Label("Add Item", systemImage: "plus")
-                    //                    }
-                    //                }
+                    #endif
                 } //: Toolbar
+                .background(
+                    backgroundGradient.ignoresSafeArea(.all))
             }//: navigation
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-    }// : 최상단 vstack
-    
-    
+        
+    }
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
