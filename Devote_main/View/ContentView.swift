@@ -12,6 +12,10 @@ struct ContentView: View {
     
     // MARK: - PROPERTY
     @State var task : String = ""
+    
+    private var isButtonDisabled : Bool{ task.isEmpty
+    }
+
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -25,6 +29,9 @@ struct ContentView: View {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
+            newItem.task = task
+            newItem.completion = false
+            newItem.id = UUID()
 
             do {
                 try viewContext.save()
@@ -56,10 +63,11 @@ struct ContentView: View {
                         Text("SAVE")
                         Spacer()
                     })
+                    .disabled(isButtonDisabled)
                     .padding()
                     .font(.headline)
                     .foregroundColor(.white)
-                    .background(Color.pink)
+                    .background(isButtonDisabled ? Color.gray : Color.pink)
                     .cornerRadius(10)
                 }//: vstack
                 .padding()
@@ -68,7 +76,14 @@ struct ContentView: View {
                 List {
                     ForEach(items) { item in
                         NavigationLink {
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                            VStack(alignment: .leading) {
+                                Text(item.task ?? "")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                                }// : LIST ITEM
                         } label: {
                             Text(item.timestamp!, formatter: itemFormatter)
                         }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EE10C21B-8FE9-4710-BA9E-5789B6B8BCA7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4705A7F8-BDF8-4D6A-AA00-D7668F5AADF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Devote_main/View/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "addItem()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4705A7F8-BDF8-4D6A-AA00-D7668F5AADF7 - daf8f6a41df666ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Devote_main.ContentView.addItem() -&gt; ()"
+                  moduleName = "Devote_main"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeomim/Desktop/switf%20project/udemy/Devote/Devote_main/Devote_main/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "4705A7F8-BDF8-4D6A-AA00-D7668F5AADF7 - 6a10335910e8ec92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Devote_main.ContentView.addItem() -&gt; ()"
+                  moduleName = "Devote_main"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yeomim/Desktop/switf%20project/udemy/Devote/Devote_main/Devote_main/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "292">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
