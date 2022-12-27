@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    
     // MARK: - PROPERTY
     @State var task : String = ""
     
