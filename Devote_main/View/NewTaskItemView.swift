@@ -13,17 +13,30 @@ struct NewTaskItemView: View {
     @State private var task: String = ""
     @Environment(\.managedObjectContext) private var viewContext
     
+    @Binding var isShowing : Bool
+    
     private var isButtonDisabled : Bool {
         task.isEmpty
     }
     // MARK: - FUNCKTION
     private func addItem() {
-        withAnimation{
+        withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
             newItem.task = task
             newItem.completion = false
             newItem.id = UUID()
+            
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+            
+            task = ""
+            hideKeyboard()
+            isShowing = false
         }
     }
     
@@ -76,6 +89,8 @@ struct NewTaskItemView: View {
 
 struct NewTaskItemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTaskItemView()
+        NewTaskItemView(isShowing: .constant(true))
+            .background(Color.gray
+                .edgesIgnoringSafeArea(.all))
     }
 }
