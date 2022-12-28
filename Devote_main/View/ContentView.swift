@@ -27,7 +27,7 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-
+    
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
@@ -74,6 +74,7 @@ struct ContentView: View {
                         Button(action: {
                             //toggle appearance
                             isDarkMode.toggle()
+                            playSound(sound: "sound-tap", type: "mp3")
                             feedback.notificationOccurred(.success)
                         }, label: {
                             Image(systemName: isDarkMode ?
@@ -87,12 +88,12 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     
                     Spacer(minLength: 80)
-
+                    
                     // MARK: - new task button
                     Button(action: {
                         showNewTaskItem = true
-                        feedback
-                            .notificationOccurred(.success)
+                        playSound(sound: "sound-ding", type: "mp3")
+                        feedback.notificationOccurred(.success)
                     }, label: {
                         Image(systemName: "plus.circle")
                             .font(.system(size: 30,
@@ -112,12 +113,12 @@ struct ContentView: View {
                     
                     //mark - tasks
                     List {
-                      ForEach(items) { item in
-                        ListRowItemView(item: item)
-                      }
-                      .onDelete(perform: deleteItems)
+                        ForEach(items) { item in
+                            ListRowItemView(item: item)
+                        }
+                        .onDelete(perform: deleteItems)
                     }
-//                    .listStyle(InsetGroupedListStyle())
+                    //                    .listStyle(InsetGroupedListStyle())
                     .cornerRadius(20)
                     .listStyle(.insetGrouped)
                     .padding(20)
@@ -145,21 +146,21 @@ struct ContentView: View {
             } // : ZSTACK
             .scrollContentBackground(.hidden)
             .background(
-            BackgroundImageView()
-                .blur(radius: showNewTaskItem ? 8.0 : 0 , opaque: false))
+                BackgroundImageView()
+                    .blur(radius: showNewTaskItem ? 8.0 : 0 , opaque: false))
             .background(
-            backgroundGradient
-                .ignoresSafeArea(.all))
-        
-//            .navigationBarTitle("Daily Tasks", displayMode: .large )
-//            .toolbar {
-//#if os(iOS)
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
-//                } //:TOOLBAR
-//#endif
-//            } //: Toolbar
-      
+                backgroundGradient
+                    .ignoresSafeArea(.all))
+            
+            //            .navigationBarTitle("Daily Tasks", displayMode: .large )
+            //            .toolbar {
+            //#if os(iOS)
+            //                ToolbarItem(placement: .navigationBarTrailing) {
+            //                    EditButton()
+            //                } //:TOOLBAR
+            //#endif
+            //            } //: Toolbar
+            
         }//: navigation
         .navigationViewStyle(StackNavigationViewStyle())
     } //:VIEW

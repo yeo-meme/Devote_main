@@ -23,6 +23,7 @@
 		3E9B5ADC295BD2D70058956E /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9B5ADB295BD2D70058956E /* BlankView.swift */; };
 		3E9B5ADE295BD82B0058956E /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9B5ADD295BD82B0058956E /* ListRowItemView.swift */; };
 		3E9B5AE0295BD8F50058956E /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9B5ADF295BD8F50058956E /* CheckboxStyle.swift */; };
+		3E9B5AE2295C19D40058956E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9B5AE1295C19D40058956E /* SoundPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3E9B5ADB295BD2D70058956E /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		3E9B5ADD295BD82B0058956E /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
 		3E9B5ADF295BD8F50058956E /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckboxStyle.swift; path = Devote_main/View/CheckboxStyle.swift; sourceTree = SOURCE_ROOT; };
+		3E9B5AE1295C19D40058956E /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				3E90AD0229399BFB00E5FFEE /* Constant.swift */,
+				3E9B5AE1295C19D40058956E /* SoundPlayer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				3E386E822939919400133DA5 /* Devote_mainApp.swift in Sources */,
 				3E386E8E2939919500133DA5 /* Devote_main.xcdatamodeld in Sources */,
 				3E9B5AE0295BD8F50058956E /* CheckboxStyle.swift in Sources */,
+				3E9B5AE2295C19D40058956E /* SoundPlayer.swift in Sources */,
 				3E81CB1B295AD39800FE2CCC /* NewTaskItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

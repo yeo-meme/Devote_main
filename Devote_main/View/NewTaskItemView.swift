@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewTaskItemView: View {
     // MARK: - PROPERTY
+    //darkmode
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State private var task: String = ""
     @Environment(\.managedObjectContext) private var viewContext
@@ -56,6 +57,8 @@ struct NewTaskItemView: View {
                 
                 Button(action: {
                     addItem()
+                    playSound(sound: "sound-ding", type: "mp3")
+                    feedback.notificationOccurred(.success)
                 }, label: {
                     Spacer()
                     Text("SAVE")
@@ -67,7 +70,7 @@ struct NewTaskItemView: View {
                 .disabled(isButtonDisabled)
                 .onTapGesture {
                     if isButtonDisabled {
-                        
+                        playSound(sound: "sound-tap", type: "mp3")
                     }
                 }
                 .padding()
